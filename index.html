@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Student Quiz
+    </title>
+</head>
+<style>
+    .button{
+        font-size: x-large;
+        font-weight:500;
+    }
+    body{
+        background-image: url("logo.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+    .ref{
+        background-color: white;
+        border: 1px solid blueviolet;
+        color: blue;
+        display: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding: 10px 25px;
+        max-width: 250px; 
+    }
+    #full{
+        top :10%;
+        left : 30%;
+        font-size:x-large;
+        position: absolute;
+        opacity: 100%;
+    }
+    #msg{
+        background-color: white;
+        border: 1px solid red;
+        color: red;
+        display: none;
+        font-weight: bold;
+        margin-bottom: 10px;
+        padding: 10px 25px;
+        max-width: 250px;
+    }
+    #ques1{
+        display: none;
+    }
+    #ques2{
+        display: none;
+    }
+    #ques3{
+        display: none;
+    }
+    #ques4{
+        display: none;
+    }
+    #ques5{
+        display: none;
+    }
+    #ques6{
+        display: none;
+        left: 40%;
+        font-size:x-large;
+        position: absolute;
+    }
+    #cbu{
+        display: none;
+        font-size: medium;
+        color: red;
+    }
+    #time{
+        display:none;
+        font-size: larger;
+        color: red;
+        left: 80%;
+        position: absolute;
+    }
+    
+</style>
+<body>
+    <p id='time'>Time left   1 : 00</p>
+    <div id="full">
+        <div id="form">
+            <h1>&emsp;Student Quiz</h1>
+            <ul id="msg"></ul>
+            <label for="Roll"> Enter Roll Number : </label>
+            <input type="text" id="Roll"><br><br>
+            &emsp;&emsp;&emsp;<button type ="submit" id="btn" class='button'>&ensp; Start Quiz &ensp;</button>
+            <br><br>
+            <p>
+                <b>Instructions : </b>
+                <li>You can attempt this exam only one time.</li>
+                <li>You can submit your response only once for a question. </li>
+                <li>You have time interval of 1 min</li>
+                <li>In case connection interrupt , you can resume your exam from index page.</li>
+                <li>Result will show after you completed all the questions. </li>
+            </p>
+            <input type="checkbox" id="cb">
+            <label for="checkbox" id='cbl'>I completely read the instructions</label>
+            <ul id="cbu"></ul>
+        </div>
+        <div id="ques1">
+            <h1>Question 1/5</h1><br>
+            <ul id="ref1" class="ref"></ul>
+            <label for="q1">'PHP' stands for</label><br><br>
+            <input type="radio" name="php" id="q1a1" value="Preprocessing HyperProgram">
+            <label for="1">Preprocessing HyperProgram</label><br>
+            <input type="radio" name="php" id="q1a2" value="HyperProgramming Preprocessor">
+            <label for="1">HyperProgramming Preprocessor</label><br>
+            <input type="radio" name="php" id="q1a3" value="Preprocessing HyperText">
+            <label for="1">Preprocessing HyperText</label><br>
+            <input type="radio" name="php" id="q1a4" value="HyperText Preprocessor">
+            <label for="1">HyperText Preprocessor</label><br><br>
+            &emsp;&emsp;&emsp;<button type ="submit" id="btn1" class='button'>Submit & Next</button>
+        </div>
+        <div id="ques2">
+            <h1>Question 2/5</h1><br>
+            <ul id="ref2"class="ref"></ul>
+            <label for="q2">'HTML' stands for</label><br><br>
+            <input type="radio" name="html" id="q2a1" value="HyperText Markup Language">
+            <label for="2">HyperText Markup Language</label><br>
+            <input type="radio" name="html" id="q2a2" value="HyperText Marking Language">
+            <label for="2">HyperText Marking Language</label><br>
+            <input type="radio" name="html" id="q2a3" value="HyperType Markup Language">
+            <label for="2">HyperType Markup Language</label><br>
+            <input type="radio" name="html" id="q2a4" value="HyperType Marking Language">
+            <label for="2">HyperType Marking Language</label><br><br>
+            &emsp;&emsp;&emsp;<button type ="submit" id="btn2" class='button'>Submit & Next</button>
+        </div>
+        <div id="ques3">
+            <h1>Question 3/5</h1><br>
+            <ul id="ref3" class="ref"></ul>
+            <label for="q1">'XML' stands for</label><br><br>
+            <input type="radio" name="xml" id="q3a1" value="Extended Markup Language">
+            <label for="3">Extended Markup Language</label><br>
+            <input type="radio" name="xml" id="q3a2" value="Expressive Markup Language">
+            <label for="3">Expressive Markup Language</label><br>
+            <input type="radio" name="xml" id="q3a3" value="Extracted Markup Language">
+            <label for="3">Extracted Markup Language</label><br>
+            <input type="radio" name="xml" id="q3a4" value="Extensible Markup Language">
+            <label for="3">Extensible Markup Language</label><br><br>
+            &emsp;&emsp;&emsp;<button type ="submit" id="btn3" class='button'>Submit & Next</button>
+        </div>
+        <div id="ques4">
+            <h1>Question 4/5</h1><br>
+            <ul id="ref4" class="ref"></ul>
+            <label for="q4">'JSP' stands for</label><br><br>
+            <input type="radio" name="jsp" id="q4a1" value="Jakarta Server Page">
+            <label for="4">Jakarta Server Page</label><br>
+            <input type="radio" name="jsp" id="q4a2" value="JavaScript Page">
+            <label for="4">JavaScript Page</label><br>
+            <input type="radio" name="jsp" id="q4a3" value="Jakarta server Program">
+            <label for="">Jakarta server Program</label><br>
+            <input type="radio" name="jsp" id="q4a4" value="JavaScript Program">
+            <label for="4">JavaScript Program</label><br><br>
+            &emsp;&emsp;&emsp;<button type ="submit" id="btn4" class='button'>Submit & Next</button>
+        </div>
+        <div id="ques5">
+            <h1>Question 5/5</h1><br>
+            <ul id="ref5" class="ref"></ul>
+            <label for="q5">'JSF' stands for</label><br><br>
+            <input type="radio" name="jsf" id="q5a1" value="Java Server Form">
+            <label for="5">Java Server Form</label><br>
+            <input type="radio" name="jsf" id="q5a2" value="Jakarta Server Form">
+            <label for="5">Jakarta Server Form</label><br>
+            <input type="radio" name="jsf" id="q5a3" value="Java Server Faces">
+            <label for="5">Java Server Faces</label><br>
+            <input type="radio" name="jsf" id="q5a4" value="Java service Faces">
+            <label for="5">Java service Faces</label><br><br>
+            &emsp;&emsp;&emsp;<button type ="submit" id="btn5" class='button'>Submit</button>
+        </div>
+    </div>
+    <div id="ques6">
+        <p> Thank You for Your Response</p>
+        <ul id="last"></ul>
+        &emsp;&emsp;&emsp;&ensp;<button type="submit" id='exit' class='button'>Exit</button>
+    </div>
+    <script>
+        const form = { 
+        btn : document.getElementById("btn"),
+        roll : document.getElementById("Roll"),
+        msg : document.getElementById("msg"),
+        q1 : document.getElementById("ques1"),
+        q2 : document.getElementById("ques2"),
+        q3 : document.getElementById("ques3"),
+        q4 : document.getElementById("ques4"),
+        q5 : document.getElementById("ques5"),
+        ind : document.getElementById("form"),
+        b1 : document.getElementById("btn1"),
+        b2 : document.getElementById("btn2"),
+        b3 : document.getElementById("btn3"),
+        b4 : document.getElementById("btn4"),
+        b5 : document.getElementById("btn5"),
+        messages : document.getElementById("last"),
+        q6 : document.getElementById("ques6"),
+        exit : document.getElementById('exit'),
+        ref1 : document.getElementById('ref1'),
+        ref2 : document.getElementById('ref2'),
+        ref3 : document.getElementById('ref3'),
+        ref4 : document.getElementById('ref4'),
+        ref5 : document.getElementById('ref5'),
+        cb : document.getElementById('cb'),
+        cbu : document.getElementById('cbu'),
+        time : document.getElementById('time'),
+        full : document.getElementById('full')
+        }
+        form.btn.addEventListener('click',() => {
+            if(cb.checked){
+                const request = new XMLHttpRequest();
+                form.cbu.style.display='none';
+                request.onload = () => {
+                    let responseObject = null;
+                    try {
+                        responseObject=JSON.parse(request.responseText);
+                    } 
+                    catch (e) {console.log("json parse error")}
+                    if(responseObject){
+                        if(responseObject.ok && responseObject.ques!=5){
+                            form.time.style.display='block';
+                            var timerttt = setInterval(timer,1000);
+                            function timer(){
+                                const request1 = new XMLHttpRequest();
+                                request1.onload = () => {
+                                    var responseObject1 = null;
+                                    try {
+                                        responseObject1=JSON.parse(request1.responseText);
+                                        //console.log("json parsed in timer "+responseObject1.time+" "+responseObject1.scoret);
+                                    } 
+                                    catch (e) {console.log("json parse error in timer")}
+                                    if(responseObject1){// && responseObject1.time>0){
+                                        let time = responseObject1.time;
+                                        console.log(time);
+                                        let min=Math.floor(time/60);
+                                        let sec=time%60;
+                                        
+                                        sec=sec<10?'0'+sec:sec;
+                                        console.log(time+" "+min+" : "+sec);
+                                        form.time.innerHTML = `Time left   ${min} : ${sec}`;
+                                        form.b5.addEventListener('click',() =>{
+                                            clearInterval(timerttt);
+                                        });
+                                        if(responseObject1.time==0){
+                                            console.log(" If entered ");
+                                            let li1 = document.createElement('h3');
+                                            li1.textContent = "  Time is up ";
+                                            li1.style.color = 'red';
+                                            form.messages.appendChild(li1);
+                                            let li = document.createElement('h3');
+                                            li.textContent = "Your Score is "+responseObject.score;
+                                            form.messages.appendChild(li);
+                                            
+                                            form.full.style.display='none';
+                                            form.q6.style.display="block";
+                                            clearInterval(timerttt);
+                                        }
+                                    }
+            
+                                }
+                                requestdata1=`roll=${form.roll.value}&time=${true}`;
+                                request1.open("post","quiz.php");
+                                request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                                request1.send(requestdata1);
+                            }   
+                        }
+                        handleResponse(responseObject);
+                    }   
+                }
+                const requestdata = `roll=${form.roll.value}`; 
+                request.open("post","quiz.php");
+                request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                request.send(requestdata);
+            }
+            else{
+                while(form.cbu.firstChild){
+                    form.cbu.removeChild(form.cbu.firstChild);
+                }
+                const li = document.createElement('label');
+                li.textContent="please read the following instruction and click the checkbox";
+                form.cbu.appendChild(li);
+                form.cbu.style.display='block';
+            }
+            });
+            
+            
+        form.b1.addEventListener('click',() => {
+            
+            const request = new XMLHttpRequest();
+            requestdata=`ques1=${'false'}&roll=${form.roll.value}`;
+            var ele = document.getElementsByName('php');
+            for(i=0;i<ele.length;i++){
+                if(ele[i].checked && ele[i].id=="q1a4"){
+                    requestdata=`ques1=${'true'}&roll=${form.roll.value}`;
+                }
+            }
+            request.open("post","quiz.php");
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestdata);
+            form.q1.style.display="none";
+            form.q2.style.display="block";
+        });
+        form.b2.addEventListener('click',() => {
+            
+            const request = new XMLHttpRequest();
+            requestdata=`ques2=${'false'}&roll=${form.roll.value}`;
+            var ele = document.getElementsByName('html');
+            for(i=0;i<ele.length;i++){
+                if(ele[i].checked && ele[i].id=="q2a1"){
+                    requestdata=`ques2=${'true'}&roll=${form.roll.value}`;
+                }
+            }
+            request.open("post","quiz.php");
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestdata);
+            form.q2.style.display="none";
+            form.q3.style.display="block";
+        });
+        form.b3.addEventListener('click',() => {
+            
+            const request = new XMLHttpRequest();
+            requestdata=`ques3=${'false'}&roll=${form.roll.value}`;
+            var ele = document.getElementsByName('xml');
+            for(i=0;i<ele.length;i++){
+                if(ele[i].checked && ele[i].id=="q3a4"){
+                    requestdata=`ques3=${'true'}&roll=${form.roll.value}`;
+                }
+            }
+            request.open("post","quiz.php");
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestdata);
+            form.q3.style.display="none";
+            form.q4.style.display="block";
+        });
+        form.b4.addEventListener('click',() => {
+            
+            const request = new XMLHttpRequest();
+            $ans1="";
+            requestdata=`ques4=${'false'}&roll=${form.roll.value}`;
+            var ele = document.getElementsByName('jsp');
+            for(i=0;i<ele.length;i++){
+                if(ele[i].checked && ele[i].id=="q4a1"){
+                    $ans2=ele[i].value;
+                    requestdata=`ques4=${'true'}&roll=${form.roll.value}`;
+                }
+            }
+            request.open("post","quiz.php");
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestdata);
+            form.q4.style.display="none";
+            form.q5.style.display="block";
+        });
+        form.b5.addEventListener('click',() => {
+            
+            const request = new XMLHttpRequest();
+            request.onload = () => {
+                let responseObject = null;
+                try {
+                    responseObject=JSON.parse(request.responseText);
+                    console.log("json parsed...");
+                    li = document.createElement('h3');
+                    li.textContent = "Your Score is "+responseObject.Score;
+                    form.messages.appendChild(li);
+                    form.q6.style.display="block";
+                } 
+                catch (e) {console.log("json parse error")} 
+            }
+            requestdata=`ques5=${'false'}&roll=${form.roll.value}`;
+            var ele = document.getElementsByName('jsf');
+            for(i=0;i<ele.length;i++){
+                if(ele[i].checked && ele[i].id=="q5a3"){
+                    requestdata=`ques5=${'true'}&roll=${form.roll.value}`;
+                }
+            }
+            request.open("post","quiz.php");
+            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            request.send(requestdata);
+            form.q5.style.display="none";
+            form.q6.style.display="block";
+            form.time.style.display='none';
+        });
+        form.exit.addEventListener('click',()=>{
+            location.href='index.html';
+        })
+        function handleResponse(responseObject){
+            if(responseObject.ok){
+                form.ind.style.display="none";
+                if(responseObject.ques==0){
+                    while(form.ref1.firstChild){
+                        form.ref1.removeChild(form.ref1.firstChild);
+                    }
+                    li=document.createElement('label');
+                    li.textContent="Welcome "+responseObject.name+"... All the best for your Exam";
+                    form.ref1.appendChild(li);
+                    form.ref1.style.display='block';
+                    form.q1.style.display="block";
+
+                }
+                if(responseObject.ques==1){
+                    while(form.ref2.firstChild){
+                        form.ref2.removeChild(form.ref2.firstChild);
+                    }
+                    li=document.createElement('label');
+                    li.textContent="Welcome back "+responseObject.name+"... Continue with your previously viewed question";
+                    form.ref2.appendChild(li);
+                    form.ref2.style.display='block';
+                    form.q2.style.display="block";
+                }
+                if(responseObject.ques==2){
+                    while(form.ref3.firstChild){
+                        form.ref3.removeChild(form.ref3.firstChild);
+                    }
+                    li=document.createElement('label');
+                    li.textContent="Welcome back "+responseObject.name+"... Continue with your previously viewed question";
+                    form.ref3.appendChild(li);
+                    form.ref3.style.display='block';
+                    form.q3.style.display="block";
+                }
+                if(responseObject.ques==3){
+                    while(form.ref4.firstChild){
+                        form.ref4.removeChild(form.ref4.firstChild);
+                    }
+                    li=document.createElement('label');
+                    li.textContent="Welcome back "+responseObject.name+"... Continue with your previously viewed question";
+                    form.ref4.appendChild(li);
+                    form.ref4.style.display='block';
+                    form.q4.style.display="block";
+                }
+                if(responseObject.ques==4){
+                    while(form.ref5.firstChild){
+                        form.ref5.removeChild(form.ref5.firstChild);
+                    }
+                    li=document.createElement('label');
+                    li.textContent="Welcome back "+responseObject.name+"... Continue with your previously viewed question";
+                    form.ref5.appendChild(li);
+                    form.ref5.style.display='block';
+                    form.q5.style.display="block";
+                }
+                if(responseObject.ques==5){
+                    while(form.msg.firstChild){
+                        form.msg.removeChild(form.msg.firstChild);
+                    }
+                    const li=document.createElement("label");
+                    li.textContent="Hi "+responseObject.name+"... You already submitted your response and your score is "+responseObject.score;
+                    form.msg.appendChild(li);
+                    form.ind.style.display="block";
+                    form.msg.style.display = 'block';
+                }
+            }
+            else{
+                while(form.msg.firstChild){
+                    form.msg.removeChild(form.msg.firstChild);
+                }
+                const li=document.createElement("label");
+                li.textContent="Incorrect Roll Number";
+                form.msg.appendChild(li);
+
+                form.msg.style.display = 'block';
+            }
+        }
+
+    </script>
+</body>
+</html>
